@@ -2,41 +2,44 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Login {
-    public JPanel loginPane;
-    private JTextField userText;
-    private JPasswordField contraseniaText;
-    private JComboBox comboBox1;
+public class Registro {
+    public JPanel registroPanel;
+    private JTextField cedulaText;
+    private JTextField nombreText;
+    private JTextField verificarText;
+    private JTextField contraseniaText;
+    private JTextField apellidoText;
+    private JTextField telefonoText;
+    private JTextField direccionText;
+    private JCheckBox aceptoLosTerminosYCheckBox;
     private JButton enviarButton;
-    private JButton registrateButton;
+    private JButton salirButton;
 
-    public Login() {
+    public Registro() {
         enviarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
-                frame.setTitle("Gestión de usuarios");
+                frame.setTitle("Iniciar Sesión");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setContentPane(new Gestion().gestionPanel);
+                frame.setContentPane(new Login().loginPane);
                 frame.pack();
                 frame.setSize(800, 600);
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
-                ((JFrame) SwingUtilities.getWindowAncestor(enviarButton)).dispose();
             }
         });
-        registrateButton.addActionListener(new ActionListener() {
+        salirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
-                frame.setTitle("Registro de usuarios");
+                frame.setTitle("Iniciar Sesión");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setContentPane(new Registro().registroPanel);
+                frame.setContentPane(new Login().loginPane);
                 frame.pack();
                 frame.setSize(800, 600);
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
-                ((JFrame) SwingUtilities.getWindowAncestor(enviarButton)).dispose();
             }
         });
     }
