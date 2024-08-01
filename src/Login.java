@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class Login {
     public JPanel loginPane;
@@ -17,14 +16,14 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 String item = (String) comboBox1.getSelectedItem();
                 String user = userText.getText();
-                String password = Arrays.toString(contraseniaText.getPassword());
+                String password = new String(contraseniaText.getPassword());
 
-                if ( !user.isEmpty() && !password.isEmpty() && !"Seleccione una opción".equals(item) ){
+                if ( (!user.isEmpty() && !password.isEmpty() )&& !"Seleccione una opción".equals(item) ){
                     if("Administrador".equals(item)){
                         JFrame frame = new JFrame();
                         frame.setTitle("Gestión de usuarios");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        frame.setContentPane(new Gestion().gestionPanel);
+                        frame.setContentPane(new ModificarJugadores().modifiJugPanel);
                         frame.pack();
                         frame.setSize(800, 600);
                         frame.setVisible(true);
@@ -44,7 +43,7 @@ public class Login {
                     }
                 }
                 else {
-                    JOptionPane.showInputDialog(null,"sexo");
+                    JOptionPane.showMessageDialog(null,"?");
                 }
             }
         });
