@@ -5,8 +5,8 @@ public class ModificarJugadores {
     private JTextField cedulaText;
     private JTextField nuevaCedulaText;
     private JTextField nuevoNombreText;
-    private JTextField nuevaNotaText;
-    private JTextField nuevaNota2Text;
+    private JTextField nuevoApellidoText;
+    private JTextField nuevoTelfText;
     private JTextPane resultadoArea;
     private JButton modificarButton;
     private JButton buscarButton;

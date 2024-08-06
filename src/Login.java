@@ -23,7 +23,7 @@ public class Login {
                         JFrame frame = new JFrame();
                         frame.setTitle("Gestión de usuarios");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        frame.setContentPane(new ModificarJugadores().modifiJugPanel);
+                        frame.setContentPane(new GestionJugadores().gestionPanel);
                         frame.pack();
                         frame.setSize(800, 600);
                         frame.setVisible(true);
@@ -32,7 +32,7 @@ public class Login {
                     }
                     else if("Encargado/Jugador".equals(item)){
                         JFrame frame = new JFrame();
-                        frame.setTitle("Gestión de usuarios");
+                        frame.setTitle("Reserva");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         frame.setContentPane(new Reserva().reservaPanel);
                         frame.pack();
@@ -58,12 +58,7 @@ public class Login {
                 frame.setSize(800, 600);
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
-                ((JFrame) SwingUtilities.getWindowAncestor(enviarButton)).dispose();
-            }
-        });
-        comboBox1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+                ((JFrame) SwingUtilities.getWindowAncestor(registrateButton)).dispose();
             }
         });
     }
