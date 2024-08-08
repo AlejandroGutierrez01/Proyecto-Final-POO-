@@ -64,7 +64,7 @@
           <model>
             <item value="Seleccione una opción"/>
             <item value="Administrador"/>
-            <item value="Encargado/Jugador"/>
+            <item value="Jugador"/>
           </model>
           <name value=""/>
         </properties>
@@ -78,7 +78,7 @@
           <text value="Iniciar Sesión"/>
         </properties>
       </component>
-      <component id="6e535" class="javax.swing.JButton" binding="enviarButton" default-binding="true">
+      <component id="6e535" class="javax.swing.JButton" binding="loginBtn">
         <constraints>
           <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="50" height="-1"/>
@@ -131,7 +131,7 @@
           </grid>
         </constraints>
       </vspacer>
-      <component id="302f3" class="javax.swing.JButton" binding="registrateButton" default-binding="true">
+      <component id="302f3" class="javax.swing.JButton" binding="registrateBtn">
         <constraints>
           <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="50" height="-1"/>
