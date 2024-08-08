@@ -15,6 +15,7 @@ public class ReservarJugador {
     private JTextArea mostrarArea;
     private JButton reservarButton;
     private JButton mostrarReservasButton;
+    private JButton salirButton;
 
     public ReservarJugador() {
         reservarButton.addActionListener(new ActionListener() {
@@ -27,6 +28,19 @@ public class ReservarJugador {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mostrarReservas();
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Login");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new Login().loginPane);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
             }
         });
     }
