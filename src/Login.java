@@ -27,11 +27,11 @@ public class Login {
                     if (validarLogin(usuario, contrasenia, tipoUsuario)) {
                         if ("Administrador".equals(tipoUsuario)) {
                             JFrame frame = new JFrame();
-                            frame.setTitle("Gestión de usuarios");
+                            frame.setTitle(" Menu Administrativo");
                             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            frame.setContentPane(new GestionJugadores().gestionPanel);
+                            frame.setContentPane(new Menu().menuPanel);
                             frame.pack();
-                            frame.setSize(800, 600);
+                            frame.setSize(700, 500);
                             frame.setVisible(true);
                             frame.setLocationRelativeTo(null);
                         } else if ("Jugador".equals(tipoUsuario)) {
@@ -40,11 +40,10 @@ public class Login {
                             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             frame.setContentPane(new ReservarJugador().jugadorPanel);
                             frame.pack();
-                            frame.setSize(800, 600);
+                            frame.setSize(700, 500);
                             frame.setVisible(true);
                             frame.setLocationRelativeTo(null);
                         }
-                        // Cierra el panel de login después del login exitoso
                         ((JFrame) SwingUtilities.getWindowAncestor(loginBtn)).dispose();
                     } else {
                         JOptionPane.showMessageDialog(null, "Credenciales inválidas.");
@@ -83,16 +82,12 @@ public class Login {
             String user = "root";
             String password = "123456";
             conn = DriverManager.getConnection(url, user, password);
-
-            // Consulta SQL para validar el login
             String query = "SELECT * FROM Usuario WHERE cedula = ? AND contrasenia = ? AND tipoUsuario = ?";
             stmt = conn.prepareStatement(query);
             stmt.setString(1, usuario);
             stmt.setString(2, contrasenia);
             stmt.setString(3, tipoUsuario);
             rs = stmt.executeQuery();
-
-            // Verificar si existe un usuario que coincida con las credenciales
             if (rs.next()) {
                 valido = true;
             }

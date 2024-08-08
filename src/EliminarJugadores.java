@@ -9,6 +9,7 @@ public class EliminarJugadores {
     private JTextField cedulaText;
     private JButton buscarButton;
     private JButton eliminarButton;
+    private JButton salirButton;
 
     public EliminarJugadores() {
         // Manejo del evento para buscar jugador
@@ -24,6 +25,20 @@ public class EliminarJugadores {
             @Override
             public void actionPerformed(ActionEvent e) {
                 eliminarJugador();
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Menu Administrativo");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new Menu().menuPanel);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
+                ((JFrame) SwingUtilities.getWindowAncestor(salirButton)).dispose();
             }
         });
     }

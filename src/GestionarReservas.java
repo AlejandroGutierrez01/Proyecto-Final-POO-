@@ -19,6 +19,7 @@ public class GestionarReservas {
     private JButton actualizarButton;
     private JButton eliminarButton;
     private JButton mostrarButton;
+    private JButton salirButton;
     private ModeloTabla modeloTabla;
 
     public GestionarReservas() {
@@ -74,6 +75,20 @@ public class GestionarReservas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mostrarReservas();
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Menu Administrativo");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new Menu().menuPanel);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
+                ((JFrame) SwingUtilities.getWindowAncestor(salirButton)).dispose();
             }
         });
     }

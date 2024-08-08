@@ -45,7 +45,9 @@
       </component>
       <vspacer id="c6122">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="30"/>
+          </grid>
         </constraints>
       </vspacer>
       <vspacer id="839b6">

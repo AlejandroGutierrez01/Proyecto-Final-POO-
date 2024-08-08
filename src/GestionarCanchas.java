@@ -13,6 +13,7 @@ public class GestionarCanchas {
     private JButton eliminarButton;
     private JTextArea textArea1;
     private JButton refrescarPáginaButton;
+    private JButton salirButton;
 
     public GestionarCanchas() {
 
@@ -59,6 +60,19 @@ public class GestionarCanchas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cargar();
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Menu Administrativo");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new Menu().menuPanel);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
             }
         });
     }

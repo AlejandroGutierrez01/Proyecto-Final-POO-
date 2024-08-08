@@ -13,6 +13,7 @@ public class ModificarJugadores {
     private JTextField nuevaDireccionText;
     private JButton modificarButton;
     private JButton buscarButton;
+    private JButton salirButton;
 
     public ModificarJugadores() {
         buscarButton.addActionListener(new ActionListener() {
@@ -26,6 +27,20 @@ public class ModificarJugadores {
             @Override
             public void actionPerformed(ActionEvent e) {
                 modificarJugador();
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Menu Administrativo");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setContentPane(new Menu().menuPanel);
+                frame.pack();
+                frame.setSize(700, 500);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
+                ((JFrame) SwingUtilities.getWindowAncestor(salirButton)).dispose();
             }
         });
     }

@@ -47,13 +47,15 @@ public class Registro {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
-                frame.setTitle("Iniciar Sesión");
+                frame.setTitle("Registrate");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setContentPane(new Login().loginPane);
                 frame.pack();
                 frame.setSize(800, 600);
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
+                ((JFrame) SwingUtilities.getWindowAncestor(salirButton)).dispose();
+
 
             }
         });
